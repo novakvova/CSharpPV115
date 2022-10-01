@@ -99,7 +99,9 @@ Dog[] dogs = {
     new Dog() { Name="Шарик", Breed= "Дворняга" },
     new Dog() { Name="Дурко", Breed= "Хаскі" },
 };
-
+//string str = "23";
+//int result;
+//int.TryParse(str, out result);
 Console.WriteLine("Готель для собак");
 foreach (var item in dogs)
 {
