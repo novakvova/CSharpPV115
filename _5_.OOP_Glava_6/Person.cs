@@ -8,7 +8,7 @@ namespace _5_.OOP_Glava_6
 {
     public abstract class Person
     {
-        private string _name;
+        protected string _name;
         public Person()
         {
 
@@ -17,6 +17,7 @@ namespace _5_.OOP_Glava_6
         {
             _name = name;
         }
+
         public abstract void Show();
     }
 }

@@ -13,10 +13,14 @@ namespace _5_.OOP_Glava_6
         {
 
         }
+        public Worker(string name, string profession) : base(name)
+        {
+            _profession = profession;
+        }
 
         public override void Show()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(this._name+"\t"+this._profession);
         }
     }
 }
