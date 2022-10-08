@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_4_PatrialWindowsForm", "_4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_5_.OOP_Glava_6", "_5_.OOP_Glava_6\_5_.OOP_Glava_6.csproj", "{67192B3B-018D-437D-B4B1-03FE6D8510B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_6_Interface", "_6_Interface\_6_Interface.csproj", "{858D4F2D-6887-4429-8781-67B17D8E0E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_6_Interface", "_6_Interface\_6_Interface.csproj", "{858D4F2D-6887-4429-8781-67B17D8E0E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_7_Collection", "_7_Collection\_7_Collection.csproj", "{23817BC7-F1B4-46A2-8F48-124B2C190FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{858D4F2D-6887-4429-8781-67B17D8E0E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858D4F2D-6887-4429-8781-67B17D8E0E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858D4F2D-6887-4429-8781-67B17D8E0E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23817BC7-F1B4-46A2-8F48-124B2C190FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23817BC7-F1B4-46A2-8F48-124B2C190FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23817BC7-F1B4-46A2-8F48-124B2C190FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23817BC7-F1B4-46A2-8F48-124B2C190FC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

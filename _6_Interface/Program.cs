@@ -54,6 +54,8 @@ namespace _6_interface
             //    Console.WriteLine(n);
             //}
 
+            
+
 
             Nurse ivanka = new Nurse
             {
