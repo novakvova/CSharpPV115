@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_9_Extention_Net", "_9_Exte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_10_AnonimObject_Linq", "_10_AnonimObject_Linq\_10_AnonimObject_Linq.csproj", "{031A8446-D24D-458C-BCF4-BE1221485262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_11_GB", "_11_GB\_11_GB.csproj", "{BBF40911-A938-4949-B759-B3235D6FA1C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_11_GB", "_11_GB\_11_GB.csproj", "{BBF40911-A938-4949-B759-B3235D6FA1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_12_ClassLib", "_12_ClassLib\_12_ClassLib.csproj", "{76BDE0EA-E948-421C-BC86-9A03F56BF93F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_12_1_SendMessage", "_12_1_SendMessage\_12_1_SendMessage.csproj", "{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{BBF40911-A938-4949-B759-B3235D6FA1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBF40911-A938-4949-B759-B3235D6FA1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBF40911-A938-4949-B759-B3235D6FA1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BDE0EA-E948-421C-BC86-9A03F56BF93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BDE0EA-E948-421C-BC86-9A03F56BF93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BDE0EA-E948-421C-BC86-9A03F56BF93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BDE0EA-E948-421C-BC86-9A03F56BF93F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

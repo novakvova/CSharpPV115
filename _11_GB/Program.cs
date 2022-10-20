@@ -43,6 +43,7 @@ namespace _11_GB
             ref object r = ref a;
             //roughly equivalent to
             TypedReference tr = __makeref(a);
+            Console.WriteLine(&a);
             return tr.GetHashCode().ToString();
             //Console.WriteLine("tr {0}", tr.GetHashCode());
             //GCHandle objHandle = GCHandle.Alloc(a, GCHandleType.WeakTrackResurrection);
