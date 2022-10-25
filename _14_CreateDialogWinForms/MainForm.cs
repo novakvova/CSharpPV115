@@ -1,3 +1,5 @@
+using _14_CreateDialogWinForms.Data;
+
 namespace _14_CreateDialogWinForms
 {
     public partial class MainForm : Form
@@ -5,6 +7,15 @@ namespace _14_CreateDialogWinForms
         public MainForm()
         {
             InitializeComponent();
+            try
+            {
+                AppFormData mydata = new AppFormData();
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -31,6 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.btnSelectImage = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,18 +55,40 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(397, 301);
+            this.btnCreate.Location = new System.Drawing.Point(576, 24);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(108, 44);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Реєстрація";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnSelectImage
+            // 
+            this.btnSelectImage.Location = new System.Drawing.Point(236, 111);
+            this.btnSelectImage.Name = "btnSelectImage";
+            this.btnSelectImage.Size = new System.Drawing.Size(162, 35);
+            this.btnSelectImage.TabIndex = 3;
+            this.btnSelectImage.Text = "Обрати фото";
+            this.btnSelectImage.UseVisualStyleBackColor = true;
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(12, 111);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(195, 145);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.TabIndex = 4;
+            this.pbImage.TabStop = false;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 357);
+            this.ClientSize = new System.Drawing.Size(696, 476);
+            this.Controls.Add(this.pbImage);
+            this.Controls.Add(this.btnSelectImage);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
@@ -72,6 +97,8 @@
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +109,7 @@
         private Label label1;
         private TextBox txtName;
         private Button btnCreate;
+        private Button btnSelectImage;
+        private PictureBox pbImage;
     }
 }
