@@ -1,4 +1,5 @@
 ﻿using _14_CreateDialogWinForms.Data;
+using _14_CreateDialogWinForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _14_CreateDialogWinForms
 {
     public partial class RegisterForm : Form
     {
+        private string imageSelect = string.Empty;
         public RegisterForm()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace _14_CreateDialogWinForms
             {
                 //MessageBox.Show("Select file "+ofd.FileName);
                 pbImage.Image = Image.FromFile(ofd.FileName);
+                imageSelect= ofd.FileName;
             }
 
         }
@@ -34,19 +38,45 @@ namespace _14_CreateDialogWinForms
         private void RegisterForm_Load(object sender, EventArgs e)
         {
             pbImage.Image = Image.FromFile("images/select.jpg");
+            MyComboBoxItem male = new MyComboBoxItem();
+            male.Name = "Чоловік";
+            male.Id =(int)Gender.Male;
+            cbGender.Items.Add(male);
+            MyComboBoxItem female = new MyComboBoxItem();
+            female.Name = "Жінка";
+            female.Id = (int)Gender.Female;
+            cbGender.Items.Add(female);
+            cbGender.SelectedIndex = 0;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(cbGender.SelectedIndex.ToString());
+            if(cbGender.SelectedIndex<0)
+            {
+                MessageBox.Show("Визначтеся із стать");
+                return;
+            }
+            if(string.IsNullOrEmpty(imageSelect))
+            {
+                MessageBox.Show("Оберіть фото");
+                return;
+            }
+            var select = cbGender.SelectedItem as MyComboBoxItem;
+
             AppFormData appFormData = new AppFormData();
+            string exp = Path.GetExtension(imageSelect);
+            string fileName = Path.GetRandomFileName()+exp;
+            File.Copy(imageSelect, $"images/{fileName}", true);
+
             UserEntity user = new UserEntity
             {
                 FirstName=txtName.Text,
-                Image="Сало.jpg",
-                LastName="Мельник",
-                Phone="097 88 77 6666",
-                Password="123456",
-                Gender=Gender.Male
+                Image= fileName,
+                LastName=txtLastName.Text,
+                Phone=txtPhone.Text,
+                Password=txtPassword.Text,
+                Gender=(Gender)select.Id
             };
             appFormData.Users.Add(user);
             appFormData.SaveChanges();
