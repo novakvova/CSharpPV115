@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,9 +66,17 @@ namespace _14_CreateDialogWinForms
             var select = cbGender.SelectedItem as MyComboBoxItem;
 
             AppFormData appFormData = new AppFormData();
+
             string exp = Path.GetExtension(imageSelect);
             string fileName = Path.GetRandomFileName()+exp;
-            File.Copy(imageSelect, $"images/{fileName}", true);
+            var bitmap = new Bitmap(Image.FromFile(imageSelect));
+            var saveBmp = ImageWorker.CompressImage(bitmap, 50, 50, false);
+            saveBmp.Save($"images/{fileName}", ImageFormat.Jpeg);
+            //File.Copy(imageSelect, $"images/{fileName}", true);
+            
+            
+
+
 
             UserEntity user = new UserEntity
             {
