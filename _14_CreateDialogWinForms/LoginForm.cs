@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _14_CreateDialogWinForms.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,27 @@ namespace _14_CreateDialogWinForms
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private readonly AppFormData _formData;
+
+        public LoginForm(AppFormData appForm)
         {
             InitializeComponent();
+            _formData = appForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
             //Application.Exit();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            var user = _formData.Users.Where(x=>x.Phone==txtPhone.Text).FirstOrDefault();
+            if(user!=null)
+            {
+                MessageBox.Show($"{user.FirstName} {user.LastName}");
+            }    
         }
     }
 }
