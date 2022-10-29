@@ -25,9 +25,13 @@ namespace _14_CreateDialogWinForms
             var users = _formData.Users.ToList();
             foreach (var user in users)
             {
-                object[] row = {user.Id, user.FirstName+" "+user.LastName, user.Phone,
-                    user.Gender, Image.FromFile($"images/{user.Image}") };
-                dgvUsers.Rows.Add(row);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    ms.Write(File.ReadAllBytes($"images/{user.Image}"));
+                    object[] row = {user.Id, user.FirstName+" "+user.LastName, user.Phone,
+                    user.Gender, Image.FromStream(ms) };
+                    dgvUsers.Rows.Add(row);
+                }
             }
         }
 
@@ -65,6 +69,10 @@ namespace _14_CreateDialogWinForms
                     var id = int.Parse(dgvUsers.Rows[selectRowIndex].Cells[0].Value.ToString());
                     //MessageBox.Show(id.ToString());
                     var userDel = _formData.Users.SingleOrDefault(x => x.Id == id);
+                    if (!string.IsNullOrEmpty(userDel.Image))
+                    {
+                        File.Delete($"images/{userDel.Image}");
+                    }
                     _formData.Users.Remove(userDel);
                     _formData.SaveChanges();
                     UpdateUsersList();
@@ -94,6 +102,7 @@ namespace _14_CreateDialogWinForms
                     editForm.initTxtPhone = user.Phone;
                     editForm.initTxtPassword = user.Password;
                     editForm.initSelectGender=user.Gender;
+                    editForm.initImageUser = user.Image;
                     editForm.initUserId = user.Id;
                     editForm.ShowDialog();
                     UpdateUsersList();

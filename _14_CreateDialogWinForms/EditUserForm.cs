@@ -1,5 +1,6 @@
 ﻿using _14_CreateDialogWinForms.Data;
 using _14_CreateDialogWinForms.Models;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,8 @@ namespace _14_CreateDialogWinForms
                 }
             }
         }
+        public string initImageUser { get; set; }
+        
         private string imageSelect = string.Empty;
         public EditUserForm(AppFormData formData)
         {
@@ -83,8 +86,11 @@ namespace _14_CreateDialogWinForms
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-            pbImage.Image = Image.FromFile("images/select.jpg");
-            
+            using (MemoryStream ms = new MemoryStream())
+            {
+                ms.Write(File.ReadAllBytes($"images/{initImageUser}"));
+                pbImage.Image = Image.FromStream(ms);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -95,11 +101,12 @@ namespace _14_CreateDialogWinForms
                 MessageBox.Show("Визначтеся із стать");
                 return;
             }
-            //if(string.IsNullOrEmpty(imageSelect))
-            //{
-            //    MessageBox.Show("Оберіть фото");
-            //    return;
-            //}
+            if (!string.IsNullOrEmpty(imageSelect))
+            {
+                var bitmap = new Bitmap(Image.FromFile(imageSelect));
+                var saveBmp = ImageWorker.CompressImage(bitmap, 50, 50, false);
+                saveBmp.Save($"images/{initImageUser}", ImageFormat.Jpeg);
+            }
             var select = cbGender.SelectedItem as MyComboBoxItem;
             
             var user = _formData.Users.SingleOrDefault(x => x.Id == initUserId);
