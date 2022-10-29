@@ -1,6 +1,6 @@
 ﻿namespace _14_CreateDialogWinForms
 {
-    partial class RegisterForm
+    partial class EditUserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnSelectImage = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@
             this.txtName.Size = new System.Drawing.Size(256, 29);
             this.txtName.TabIndex = 1;
             // 
-            // btnCreate
+            // btnSave
             // 
-            this.btnCreate.Location = new System.Drawing.Point(576, 24);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(108, 44);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "Реєстрація";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnSave.Location = new System.Drawing.Point(576, 24);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(108, 44);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Оновити";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSelectImage
             // 
@@ -160,7 +160,7 @@
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // RegisterForm
+            // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +168,7 @@
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnSelectImage);
-            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -180,9 +180,9 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "RegisterForm";
+            this.Name = "EditUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Реєстрація користувача";
+            this.Text = "Оновити користувача";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
@@ -194,7 +194,7 @@
 
         private Label label1;
         private TextBox txtName;
-        private Button btnCreate;
+        private Button btnSave;
         private Button btnSelectImage;
         private PictureBox pbImage;
         private Label label2;

@@ -72,5 +72,36 @@ namespace _14_CreateDialogWinForms
                 }
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Int32 selectedCellCount = dgvUsers.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedCellCount > 0)
+            {
+                if (dgvUsers.AreAllCellsSelected(true))
+                {
+                    MessageBox.Show("All cells are selected", "Selected Cells");
+                }
+                else
+                {
+                    var selectRowIndex = dgvUsers.SelectedCells[0].RowIndex;
+                    var id = int.Parse(dgvUsers.Rows[selectRowIndex].Cells[0].Value.ToString());
+                    //MessageBox.Show(id.ToString());
+                    var user = _formData.Users.SingleOrDefault(x => x.Id == id);
+                    EditUserForm editForm = new EditUserForm(_formData);
+                    editForm.initTxtName = user.FirstName;
+                    editForm.initTxtLastName = user.LastName;
+                    editForm.initTxtPhone = user.Phone;
+                    editForm.initTxtPassword = user.Password;
+                    editForm.initSelectGender=user.Gender;
+                    editForm.initUserId = user.Id;
+                    editForm.ShowDialog();
+                    UpdateUsersList();
+
+                }
+            }
+           
+            //MessageBox.Show("Edit item");
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,11 +125,22 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(105, 60);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(87, 29);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Редагувати";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 374);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.btnShowRegisterForm);
@@ -153,5 +165,6 @@
         private DataGridViewTextBoxColumn ColGender;
         private DataGridViewImageColumn ColImage;
         private Button btnDelete;
+        private Button btnEdit;
     }
 }
