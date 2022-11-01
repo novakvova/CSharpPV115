@@ -9,8 +9,8 @@ namespace _14_CreateDialogWinForms.Data
 {
     public enum Gender
     {
-        Female=0,
-        Male=1,
+        Male=0,
+        Female=1,
     }
     public class UserEntity
     {

@@ -1,5 +1,10 @@
 using _14_CreateDialogWinForms.Data;
+using Bogus;
+using System.Drawing.Imaging;
+using System.Net;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.DataFormats;
 
 namespace _14_CreateDialogWinForms
 {
@@ -112,5 +117,49 @@ namespace _14_CreateDialogWinForms
            
             //MessageBox.Show("Edit item");
         }
+
+        private void btnGen_Click(object sender, EventArgs e)
+        {
+            var testOrders = new Faker<UserEntity>("uk")
+            //Ensure all properties have rules. By default, StrictMode is false
+            //Set a global policy by using Faker.DefaultStrictMode
+                .RuleFor(u => u.Gender, f => f.PickRandom<Gender>())
+                .RuleFor(u => u.FirstName, (f, u) => f.Name.FirstName((Bogus.DataSets.Name.Gender)(int)u.Gender))
+                .RuleFor(u => u.LastName, (f, u) => f.Name.LastName((Bogus.DataSets.Name.Gender)(int)u.Gender))
+                .RuleFor(u => u.Phone, (f, u) => f.Phone.PhoneNumber())
+                .RuleFor(u => u.Password, (f, u) => f.Internet.Password())
+                .RuleFor(u => u.Image, (f, u) => f.Image.LoremFlickrUrl());
+
+            for (int i = 0; i < 1000; i++)
+            {
+                var user = testOrders.Generate();
+                using (WebClient client = new WebClient())
+                {
+                    //byte[] data = client.DownloadData(user.Image);
+                    using (Stream stream = client.OpenRead(user.Image))
+                    {
+                        Bitmap bitmap; 
+                        bitmap = new Bitmap(stream);
+                        var saveBMP = ImageWorker.CompressImage(bitmap, 50, 50, false);
+                        string fileName = Path.GetRandomFileName() + ".jpg";
+                        saveBMP.Save($"images/{fileName}", ImageFormat.Jpeg);
+                        user.Image = fileName;
+                    }
+                }
+                _formData.Users.Add(user);
+                _formData.SaveChanges();
+            }
+
+        }
+
+        //UserEntity user = new UserEntity
+        //{
+        //    FirstName = txtName.Text,
+        //    Image = fileName,
+        //    LastName = txtLastName.Text,
+        //    Phone = txtPhone.Text,
+        //    Password = txtPassword.Text,
+        //    Gender = (Gender)select.Id
+        //};
     }
 }
