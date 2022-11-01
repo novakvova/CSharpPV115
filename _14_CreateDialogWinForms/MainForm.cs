@@ -130,7 +130,7 @@ namespace _14_CreateDialogWinForms
                 .RuleFor(u => u.Password, (f, u) => f.Internet.Password())
                 .RuleFor(u => u.Image, (f, u) => f.Image.LoremFlickrUrl());
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 1; i++)
             {
                 var user = testOrders.Generate();
                 using (WebClient client = new WebClient())
@@ -140,9 +140,14 @@ namespace _14_CreateDialogWinForms
                     {
                         Bitmap bitmap; 
                         bitmap = new Bitmap(stream);
-                        var saveBMP = ImageWorker.CompressImage(bitmap, 50, 50, false);
                         string fileName = Path.GetRandomFileName() + ".jpg";
-                        saveBMP.Save($"images/{fileName}", ImageFormat.Jpeg);
+                        string[] sizes = { "50", "150", "300", "600" };
+                        foreach (string size in sizes)
+                        {
+                            int width = int.Parse(size);
+                            var saveBMP = ImageWorker.CompressImage(bitmap, width, width, false);
+                            saveBMP.Save($"images/{size}_{fileName}", ImageFormat.Jpeg);
+                        }
                         user.Image = fileName;
                     }
                 }
