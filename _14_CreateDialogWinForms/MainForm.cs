@@ -32,7 +32,7 @@ namespace _14_CreateDialogWinForms
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    ms.Write(File.ReadAllBytes($"images/{user.Image}"));
+                    ms.Write(File.ReadAllBytes($"images/50_{user.Image}"));
                     object[] row = {user.Id, user.FirstName+" "+user.LastName, user.Phone,
                     user.Gender, Image.FromStream(ms) };
                     dgvUsers.Rows.Add(row);
@@ -130,7 +130,7 @@ namespace _14_CreateDialogWinForms
                 .RuleFor(u => u.Password, (f, u) => f.Internet.Password())
                 .RuleFor(u => u.Image, (f, u) => f.Image.LoremFlickrUrl());
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 var user = testOrders.Generate();
                 using (WebClient client = new WebClient())
@@ -155,6 +155,30 @@ namespace _14_CreateDialogWinForms
                 _formData.SaveChanges();
             }
 
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            Int32 selectedCellCount = dgvUsers.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedCellCount > 0)
+            {
+                if (dgvUsers.AreAllCellsSelected(true))
+                {
+                    MessageBox.Show("All cells are selected", "Selected Cells");
+                }
+                else
+                {
+                    var selectRowIndex = dgvUsers.SelectedCells[0].RowIndex;
+                    var id = int.Parse(dgvUsers.Rows[selectRowIndex].Cells[0].Value.ToString());
+                    UserDetailsForm userDetails = new UserDetailsForm(_formData);
+                    userDetails.UserID = id;
+
+                    userDetails.ShowDialog();
+
+                    
+
+                }
+            }
         }
 
         //UserEntity user = new UserEntity
