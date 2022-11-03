@@ -1,4 +1,8 @@
-﻿namespace _14_CreateDialogWinForms
+﻿
+
+using System.Windows.Forms;
+
+namespace _14_CreateDialogWinForms
 {
     partial class RegisterForm
     {

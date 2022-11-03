@@ -31,11 +31,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_12_ClassLib", "_12_ClassLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_12_1_SendMessage", "_12_1_SendMessage\_12_1_SendMessage.csproj", "{0B35C4D1-AD4D-4CA2-8F6F-FC0771F0B60D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_13_Reflaction", "_13_Reflaction\_13_Reflaction.csproj", "{9679CF79-B7C1-42BB-A3CD-B2802CCAD578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_13_Reflaction", "_13_Reflaction\_13_Reflaction.csproj", "{9679CF79-B7C1-42BB-A3CD-B2802CCAD578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_13_1_LibPerson", "_13_1_LibPerson\_13_1_LibPerson.csproj", "{3FF8FDDF-D441-47FB-8FF5-332A57FABEC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_13_1_LibPerson", "_13_1_LibPerson\_13_1_LibPerson.csproj", "{3FF8FDDF-D441-47FB-8FF5-332A57FABEC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_14_CreateDialogWinForms", "_14_CreateDialogWinForms\_14_CreateDialogWinForms.csproj", "{F340998D-B10F-4436-9378-32CFE9B5510F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_14_CreateDialogWinForms", "_14_CreateDialogWinForms\_14_CreateDialogWinForms.csproj", "{F340998D-B10F-4436-9378-32CFE9B5510F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hh", "hh\hh.csproj", "{DF8E8649-2361-45DE-84EF-B14CEF1C82DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{F340998D-B10F-4436-9378-32CFE9B5510F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F340998D-B10F-4436-9378-32CFE9B5510F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F340998D-B10F-4436-9378-32CFE9B5510F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8E8649-2361-45DE-84EF-B14CEF1C82DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8E8649-2361-45DE-84EF-B14CEF1C82DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8E8649-2361-45DE-84EF-B14CEF1C82DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8E8649-2361-45DE-84EF-B14CEF1C82DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

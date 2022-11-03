@@ -1,6 +1,10 @@
 using _14_CreateDialogWinForms.Data;
 using Bogus;
+using System;
+using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -130,7 +134,7 @@ namespace _14_CreateDialogWinForms
                 .RuleFor(u => u.Password, (f, u) => f.Internet.Password())
                 .RuleFor(u => u.Image, (f, u) => f.Image.LoremFlickrUrl());
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 2; i++)
             {
                 var user = testOrders.Generate();
                 using (WebClient client = new WebClient())
